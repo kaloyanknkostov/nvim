@@ -2,7 +2,6 @@
      Resources:
      - https://learnxinyminutes.com/docs/lua/
      - :help lua-guide  https://neovim.io/doc/user/lua-guide.html
-     testing
 --]]
 
 -- Set <space> as the leader key
