@@ -62,7 +62,6 @@ vim.opt.incsearch = true
 vim.opt.signcolumn = 'yes'
 vim.opt.isfname:append '@-@'
 vim.opt.colorcolumn = '160'
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -647,6 +646,7 @@ require('lazy').setup({
       }
     end,
   },
+  --[[
   {
     'loctvl842/monokai-pro.nvim',
     as = 'monokai',
@@ -670,8 +670,10 @@ require('lazy').setup({
         override = function(c) end,
       }
       vim.cmd [[colorscheme monokai-pro]]
-    end,
-  },
+  --  end,
+  -- },
+  --]]
+
   --[[
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
@@ -815,3 +817,4 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 --
 os.execute 'xmodmap -e " keycode 9 = grave asciitilde"'
+vim.cmd 'set cmdheight=0'
