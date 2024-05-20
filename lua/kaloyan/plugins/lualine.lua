@@ -1,3 +1,7 @@
+local function hello()
+  require 'barbecue'
+  return [[hello world]]
+end
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = {
@@ -22,7 +26,7 @@ return {
       lualine_c = {
         {
           'filename',
-          path = 1,
+          path = 0,
         },
       },
       lualine_x = {

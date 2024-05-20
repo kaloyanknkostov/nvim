@@ -1,10 +1,9 @@
 vim.opt.relativenumber = true
-vim.g.netrw_banner = 0 -- Disables the Netrw banner. Press 'I' to toggle.
 vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.mouse = 'a' -- mouse support
 vim.opt.showmode = false -- Don't show the mode, since it's already in the status line
-vim.opt.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
+--vim.opt.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
 vim.opt.breakindent = true -- Enable break indent
 vim.opt.undofile = true -- Save undo history
 vim.opt.ignorecase = true -- Case-insensitive searching UNLESS \C or one or more capital letters
