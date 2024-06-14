@@ -38,7 +38,8 @@ return {
           crust = '#141617',
         },
       },
-      transparent_background = false,
+
+      transparent_background = true,
       show_end_of_buffer = false,
       integration_default = false,
       integrations = {
@@ -313,6 +314,9 @@ return {
             ['@lsp.type.typeParameter'] = { link = 'TSTypeDefinition' },
             ['@lsp.type.variable'] = { link = 'TSVariable' },
           }
+        end,
+        on_colors = function(colors)
+          colors.bg_statusline = colors.none
         end,
         latte = function(colors)
           return {

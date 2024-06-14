@@ -12,5 +12,5 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  { import = 'kaloyan.plugins' },
+  { import = 'kaloyan.plugins', imoprt = 'kaloyan.plugins.colorschemes' },
 }, {})
