@@ -8,5 +8,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
---os.execute 'xmodmap -e " keycode 9 = grave asciitilde"'
 vim.cmd 'set cmdheight=0'
