@@ -53,6 +53,10 @@
       "rev": "d1a9158",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
+    "nvim-autopairs": {
+      "rev": "7a2c97c",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
     "nvim-lspconfig": {
       "rev": "2b52bc2",
       "src": "https://github.com/neovim/nvim-lspconfig"
@@ -93,7 +97,8 @@
     },
     "ultimate-autopair.nvim": {
       "rev": "6a51446",
-      "src": "https://github.com/altermo/ultimate-autopair.nvim"
+      "src": "https://github.com/altermo/ultimate-autopair.nvim",
+      "version": "'v0.6'"
     }
   }
 }
