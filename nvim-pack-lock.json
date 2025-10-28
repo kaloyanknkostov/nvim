@@ -49,10 +49,6 @@
       "rev": "ad7146a",
       "src": "https://github.com/mason-org/mason.nvim"
     },
-    "mini.nvim": {
-      "rev": "d1a9158",
-      "src": "https://github.com/echasnovski/mini.nvim"
-    },
     "nvim-autopairs": {
       "rev": "7a2c97c",
       "src": "https://github.com/windwp/nvim-autopairs"
