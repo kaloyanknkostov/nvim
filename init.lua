@@ -14,5 +14,6 @@ require("plugins.other")
 require("plugins.formater")
 ------Aesthetics Plugins-----------------------
 require("plugins.gruvbox")
-require("plugins.lualine")
+-- require("plugins.lualine")
+require("my-statusline").setup()
 -----------------------------------------------
