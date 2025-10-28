@@ -41,8 +41,8 @@ vim.lsp.config("lua_ls", {
 require("luasnip.loaders.from_vscode").lazy_load()
 require("blink.cmp").setup({
 	signature = { enabled = true },
-	keymap = { preset = 'super-tab' },
-	appearance = { nerd_font_variant = 'normal',},
+	keymap = { preset = "super-tab" },
+	appearance = { nerd_font_variant = "normal" },
 	completion = {
 		documentation = { auto_show = false, auto_show_delay_ms = 500 },
 		menu = {
@@ -54,8 +54,7 @@ require("blink.cmp").setup({
 		},
 	},
 	sources = {
-			default = { 'lsp', 'path', 'snippets', 'buffer' },
-		},
-	fuzzy = { implementation = 'lua' },
-
+		default = { "lsp", "path", "snippets", "buffer" },
+	},
+	fuzzy = { implementation = "lua" },
 })
