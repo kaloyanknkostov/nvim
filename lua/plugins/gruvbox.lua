@@ -1,9 +1,5 @@
-return {
-	"ellisonleao/gruvbox.nvim",
-	lazy = false,
-	priority = 1000,
-	config = function()
-		require("gruvbox").setup({
+vim.pack.add({"https://github.com/ellisonleao/gruvbox.nvim"})
+require("gruvbox").setup({
 			-- Equivalent to Kanagawa's transparent = true
 			transparent_mode = true, -- Fixed the typo here
 
@@ -22,6 +18,4 @@ return {
 			},
 
 		})
-		vim.cmd.colorscheme "gruvbox"
-	end,
-}
+vim.cmd.colorscheme "gruvbox"

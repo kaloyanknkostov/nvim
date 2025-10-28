@@ -30,3 +30,4 @@ vim.opt.incsearch = true
 vim.opt.isfname:append '@-@'
 vim.opt.colorcolumn = '160'
 vim.cmd 'set cmdheight=0'
+vim.opt.winborder = 'rounded'

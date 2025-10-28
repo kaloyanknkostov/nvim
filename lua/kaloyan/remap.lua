@@ -27,33 +27,33 @@ end, {})
 
 --Lsp
 ------------------------------------------------
-local on_attach = function(client, bufnr)
-	local opts = { buffer = bufnr }
-
-	-- Basic LSP Keymaps (Uncomment to enable)
-	-- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-	vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-	vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-	-- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-	-- vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
-	-- vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-	-- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-
-	-- Formatting (Uncomment to enable)
-	-- vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, opts)
-
-	-- Workspace management (Uncomment to enable)
-	-- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
-	-- vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
-end
-
--- Create the LspAttach Autocmd
-vim.api.nvim_create_autocmd('LspAttach', {
-	group = vim.api.nvim_create_augroup('UserLspKeymaps', { clear = true }),
-	callback = function(ev)
-		-- Call the keymap function to set keymaps for the newly attached buffer
-		on_attach(vim.lsp.get_client_by_id(ev.data.client_id), ev.buf)
-	end,
-})
+-- local on_attach = function(client, bufnr)
+-- 	local opts = { buffer = bufnr }
+--
+-- 	-- Basic LSP Keymaps (Uncomment to enable)
+-- 	-- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+-- 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+-- 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+-- 	vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+-- 	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+-- 	-- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+-- 	-- vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
+-- 	-- vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+-- 	-- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+--
+-- 	-- Formatting (Uncomment to enable)
+-- 	-- vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, opts)
+--
+-- 	-- Workspace management (Uncomment to enable)
+-- 	-- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
+-- 	-- vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
+-- end
+--
+-- -- Create the LspAttach Autocmd
+-- vim.api.nvim_create_autocmd('LspAttach', {
+-- 	group = vim.api.nvim_create_augroup('UserLspKeymaps', { clear = true }),
+-- 	callback = function(ev)
+-- 		-- Call the keymap function to set keymaps for the newly attached buffer
+-- 		on_attach(vim.lsp.get_client_by_id(ev.data.client_id), ev.buf)
+-- 	end,
+-- })
