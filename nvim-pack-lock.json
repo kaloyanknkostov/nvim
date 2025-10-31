@@ -24,6 +24,10 @@
       "rev": "5e0a460",
       "src": "https://github.com/ellisonleao/gruvbox.nvim"
     },
+    "hardtime.nvim": {
+      "rev": "b4e4319",
+      "src": "https://github.com/m4xshen/hardtime.nvim"
+    },
     "harpoon": {
       "rev": "ed1f853",
       "src": "https://github.com/ThePrimeagen/harpoon",
