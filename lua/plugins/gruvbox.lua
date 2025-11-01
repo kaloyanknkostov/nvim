@@ -11,7 +11,6 @@ require("gruvbox").setup({
 	},
 	terminal_colors = true,
 	overrides = {
-		LineNr = { bg = "none" }, -- Make LineNr background transparent
+		LineNr = { fg = "#f2e5bc" },
 	},
 })
-vim.cmd.colorscheme("gruvbox")

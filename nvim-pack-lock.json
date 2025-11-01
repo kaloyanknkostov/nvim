@@ -16,6 +16,10 @@
       "rev": "572f566",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
+    "fzf-lua": {
+      "rev": "6b5c48f",
+      "src": "https://github.com/folke/fzf-lua"
+    },
     "gitsigns.nvim": {
       "rev": "20ad441",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -99,6 +103,10 @@
       "rev": "6a51446",
       "src": "https://github.com/altermo/ultimate-autopair.nvim",
       "version": "'v0.6'"
+    },
+    "vague.nvim": {
+      "rev": "5689afd",
+      "src": "https://github.com/vague-theme/vague.nvim"
     }
   }
 }

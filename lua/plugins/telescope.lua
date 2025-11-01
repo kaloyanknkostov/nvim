@@ -1,23 +1,33 @@
 vim.pack.add({
-	{ src = "https://github.com/nvim-telescope/telescope.nvim", version = vim.version.range("0.1.x") },
-	{ src = "https://github.com/nvim-lua/plenary.nvim" },
-	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
+	{ src = "https://github.com/folke/fzf-lua" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
-	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
 })
-require("telescope").setup({
-	extensions = {
-		["ui-select"] = require("telescope.themes").get_dropdown(),
+require("fzf-lua").setup({
+
+	fzf_colors = true,
+	defaults = {
+		formatter = "path.dirname_first",
 	},
-	pickers = {
-		find_files = {
-			previewer = false,
+	winopts = {
+		height = 0.60,
+		width = 0.40,
+		border = "rounded",
+		preview = {
+			border = "rounded", -- preview border: accepts both `nvim_open_win`
+			hidden = false,
+			layout = "vertical",
 		},
 	},
 })
-pcall(require("telescope").load_extension, "fzf")
-pcall(require("telescope").load_extension, "ui-select")
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>sf", builtin.find_files)
-vim.keymap.set("n", "<leader>sd", builtin.diagnostics)
-vim.keymap.set("n", "<leader>sw", builtin.current_buffer_fuzzy_find)
+vim.keymap.set("n", "<leader>sf", function()
+	require("fzf-lua").files()
+end, { desc = "Fzf Files" })
+vim.keymap.set("n", "<leader>sd", function()
+	require("fzf-lua").diagnostics_document()
+end, { desc = "Fzf diagnostics" })
+vim.keymap.set("n", "<leader>sw", function()
+	require("fzf-lua").lgrep_curbuf()
+end, { desc = "fzf search word" })
+vim.keymap.set("n", "<leader>th", function()
+	require("fzf-lua").colorschemes()
+end, { desc = "Fzf Colorschemes" })

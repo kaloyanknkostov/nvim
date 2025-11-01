@@ -14,5 +14,7 @@ require("plugins.formater")
 require("plugins.hard")
 ------Aesthetics Plugins-----------------------
 require("plugins.gruvbox")
+require("plugins.vague")
 require("my-statusline").setup()
 -----------------------------------------------
+vim.cmd("colorscheme vague")

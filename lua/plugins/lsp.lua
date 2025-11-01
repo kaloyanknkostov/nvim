@@ -41,7 +41,7 @@ vim.lsp.config("lua_ls", {
 require("luasnip.loaders.from_vscode").lazy_load()
 require("blink.cmp").setup({
 	signature = { enabled = true },
-	keymap = { preset = "super-tab" },
+	keymap = { preset = "default" },
 	appearance = { nerd_font_variant = "normal" },
 	completion = {
 		documentation = { auto_show = false, auto_show_delay_ms = 500 },
