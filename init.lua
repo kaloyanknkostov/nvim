@@ -13,8 +13,7 @@ require("plugins.other")
 require("plugins.formater")
 require("plugins.hard")
 ------Aesthetics Plugins-----------------------
-require("plugins.gruvbox")
-require("plugins.vague")
+require("plugins.color")
 require("my-statusline").setup()
 -----------------------------------------------
 vim.cmd("colorscheme vague")

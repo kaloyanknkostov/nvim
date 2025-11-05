@@ -1,5 +1,9 @@
+vim.pack.add({ "https://github.com/vimpostor/vim-tpipeline" })
+
+--------------------------------------------------------------------------------
 local M = {}
 local sep = "  "
+
 function M.get_git_branch_display()
 	local head = vim.fn.system("git rev-parse --abbrev-ref HEAD 2>/dev/null")
 	if vim.v.shell_error == 0 then
@@ -15,6 +19,7 @@ function M.get_git_branch_display()
 	end
 	return ""
 end
+
 function M.get_lsp_display()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
@@ -27,6 +32,7 @@ function M.get_lsp_display()
 	end
 	return " " .. table.concat(client_names, ", ") .. sep --  is a Nerd Font icon
 end
+
 function M.get_diff_display()
 	local gitsigns_status = vim.b.gitsigns_status
 	if gitsigns_status and gitsigns_status ~= "" then
@@ -36,6 +42,7 @@ function M.get_diff_display()
 	end
 	return ""
 end
+
 M.set_statusline_string = function()
 	local components = {}
 	table.insert(components, " ") -- Padding
@@ -48,6 +55,13 @@ M.set_statusline_string = function()
 	table.insert(components, " ") -- Added final padding space
 	vim.o.statusline = table.concat(components, "")
 end
+
+-- Helper function to set/reset highlights
+function M.set_transparent_hl()
+	vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
+	vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" })
+end
+
 M.setup = function()
 	_G.MyStatusline = {
 		get_git_branch_display = M.get_git_branch_display,
@@ -56,14 +70,26 @@ M.setup = function()
 	}
 	vim.o.laststatus = 3
 	vim.o.showmode = false
-	vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
-	vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" })
+
+	-- Call our highlight function once on initial setup
+	M.set_transparent_hl()
+
 	M.set_statusline_string()
+
 	vim.api.nvim_create_augroup("MyStatuslineRefresh", { clear = true })
+
 	vim.api.nvim_create_autocmd({ "LspAttach", "LspDetach" }, {
 		group = "MyStatuslineRefresh",
 		pattern = "*",
 		command = "redrawstatus!", -- Force a redraw of the statusline
 	})
+
+	-- This new autocommand re-applies transparency when the colorscheme changes
+	vim.api.nvim_create_autocmd("ColorScheme", {
+		group = "MyStatuslineRefresh",
+		pattern = "*",
+		callback = M.set_transparent_hl, -- Call our helper function
+	})
 end
+
 return M
